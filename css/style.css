@@ -1,0 +1,24 @@
+body{
+    background-color: rgb(31, 31, 31);
+}
+.bot {    
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    border-radius: 3ch;
+    height: 6cm;
+    width: 25cm;
+    margin: 10px auto;
+}
+#button{
+    width: 3,5cm;
+    height: 2cm;
+    background-color: darkred;
+    border-color: black;
+    border-radius: 5px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    display: flex;
+    justify-self: center;
+    text-align: center;
+}

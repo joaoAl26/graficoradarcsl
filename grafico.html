@@ -1,0 +1,75 @@
+<html>
+    <head>
+      <script src="https://cdn.anychart.com/releases/v8/js/anychart-core.min.js"></script>
+      <script src="https://cdn.anychart.com/releases/v8/js/anychart-radar.min.js"></script>
+      <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+      <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+      <script src="https://cdn.anychart.com/releases/v8/themes/dark_turquoise.min.js"></script>
+      <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+      <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+      <title>Gráfico de Radar JS</title>
+    </head>
+    <body>
+    
+     <div id="container"></div>
+    
+    <script>
+    
+      anychart.onDocumentReady(function () {
+        anychart.theme('darkTurquoise');
+
+        var data1 = [
+          {x: 'Qualidade', value: 3},
+          {x: 'Conteúdo', value: 3},
+          {x: 'Trabalhos', value: 5},
+          {x: 'Interação', value: 4},
+          {x: 'Didática', value: 2},
+        ];
+    
+        var data2 = [
+          {x: 'Qualidade', value: 5},
+          {x: 'Conteúdo', value: 3},
+          {x: 'Trabalhos', value: 2},
+          {x: 'Interação', value: 3},
+          {x: 'Didática', value: 4},
+        ];
+    
+        var data3 = [
+          {x: 'Qualidade', value: 2},
+          {x: 'Conteúdo', value: 4},
+          {x: 'Trabalhos', value: 4},
+          {x: 'Interação', value: 5},
+          {x: 'Didática', value: 2},
+        ];
+    
+        var chart = anychart.radar();
+    
+        chart.yScale()
+          .minimum(0)
+          .maximum(5)
+          .ticks({'interval':1});
+    
+        
+        chart.yGrid().palette(['gray 0.1', 'gray 0.2']);
+    
+        chart.area(data1).name('Alexandre').markers(true).fill('#FF7070', 0.4).stroke('#FF7070');
+        
+        chart.area(data2).name('João Alberto').markers(true).fill('#49D4C6', 0.4).stroke('#49D4C6');
+        
+        chart.area(data3).name('Lara Silveira').markers(true).fill('#FFA947', 0.4).stroke('#FFA947');
+
+
+    
+        chart.title('Avaliação das Aulas de Matemática')
+  
+          .legend(true);
+    
+        chart.container('container');
+        chart.draw();
+      });
+    
+    </script>
+    </body>
+    </html>
+                    
+                    
